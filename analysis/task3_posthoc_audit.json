@@ -1,0 +1,21 @@
+{
+  "submitted_signal": "out_of_fold_negative_log_noisy_label_probability",
+  "selection_rule": "OOF if all predefined folds complete within time budget; otherwise early loss. Clean audit never selects the submitted signal.",
+  "metrics": {
+    "early_loss_epochs_1_to_10": {
+      "auroc": 0.8534801680104073,
+      "precision_at_k": 0.7129051852669943,
+      "k": 18109
+    },
+    "final_epoch_loss": {
+      "auroc": 0.7493141726303182,
+      "precision_at_k": 0.6272019437848584,
+      "k": 18109
+    },
+    "out_of_fold_negative_log_probability": {
+      "auroc": 0.928032421086644,
+      "precision_at_k": 0.8131315920260644,
+      "k": 18109
+    }
+  }
+}

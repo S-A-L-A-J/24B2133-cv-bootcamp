@@ -1,0 +1,227 @@
+{
+  "policy": {
+    "second_seed": 2134,
+    "epochs_per_network": 60,
+    "batch_size": 128,
+    "candidates_in_tie_order": [
+      "original",
+      "second_seed",
+      "ensemble"
+    ],
+    "ensemble_weights": [
+      0.5,
+      0.5
+    ],
+    "selection_label": "noisy_label",
+    "clean_label_usage": "none",
+    "synthetic_policy": "Reproduce the human-selected configuration; no synthetic policy re-selection.",
+    "maximum_additional_networks": 2,
+    "task3_unchanged": true
+  },
+  "choice": "original",
+  "human_validation_scores": {
+    "original": 58.06,
+    "second_seed": 57.66,
+    "ensemble": 57.82
+  },
+  "human_runs": [
+    {
+      "name": "robust_elr",
+      "method": "elr",
+      "training_label": "noisy_label",
+      "selection_label": "noisy_label",
+      "seed": 2133,
+      "epochs": 60,
+      "batch_size": 128,
+      "training_images": 45000,
+      "training_index_sha256": "bfeb1036de41230ce0bd14d40d7b5f54e7396c2b45bfe80f30e6acb0454611a0",
+      "normalization": {
+        "mean": [
+          0.4915273318616848,
+          0.48229829196826324,
+          0.4466710224257884
+        ],
+        "std": [
+          0.24700601283311302,
+          0.24345457464553688,
+          0.2615733103293268
+        ]
+      },
+      "architecture": "provided ResNet18; unchanged",
+      "optimizer": "SGD lr=0.1 momentum=0.9 nesterov=True weight_decay=0.0005",
+      "schedule": "cosine, T_max=60, eta_min=0",
+      "augmentation": "reflect-pad 4, random crop 32, horizontal flip p=0.5",
+      "torch": "2.11.0+cu128",
+      "gpu": "NVIDIA GeForce RTX 3050 4GB Laptop GPU",
+      "precision": "CUDA FP16 autocast with GradScaler; FP32 weights; channels_last",
+      "cudnn_benchmark": true,
+      "bit_exact_reproducibility": false,
+      "best_acc": 58.059996366500854,
+      "best_epoch": 46,
+      "final_acc": 57.77999758720398,
+      "elapsed_seconds": 16928.706726312637
+    },
+    {
+      "name": "elr_seed2",
+      "method": "elr",
+      "training_label": "noisy_label",
+      "selection_label": "noisy_label",
+      "seed": 2134,
+      "epochs": 60,
+      "batch_size": 128,
+      "training_images": 45000,
+      "training_index_sha256": "bfeb1036de41230ce0bd14d40d7b5f54e7396c2b45bfe80f30e6acb0454611a0",
+      "normalization": {
+        "mean": [
+          0.4915273318616848,
+          0.48229829196826324,
+          0.4466710224257884
+        ],
+        "std": [
+          0.24700601283311302,
+          0.24345457464553688,
+          0.2615733103293268
+        ]
+      },
+      "architecture": "provided ResNet18; unchanged",
+      "optimizer": "SGD lr=0.1 momentum=0.9 nesterov=True weight_decay=0.0005",
+      "schedule": "cosine, T_max=60, eta_min=0",
+      "augmentation": "reflect-pad 4, random crop 32, horizontal flip p=0.5",
+      "torch": "2.11.0+cu128",
+      "gpu": "NVIDIA GeForce RTX 3050 4GB Laptop GPU",
+      "precision": "CUDA FP16 autocast with GradScaler; FP32 weights; channels_last",
+      "cudnn_benchmark": true,
+      "bit_exact_reproducibility": false,
+      "best_acc": 57.66000151634216,
+      "best_epoch": 58,
+      "final_acc": 57.45999813079834,
+      "elapsed_seconds": 17055.623017311096
+    }
+  ],
+  "synthetic_runs": [
+    {
+      "name": "synthetic_best",
+      "method": "elr",
+      "training_label": "synthetic_label",
+      "selection_label": "synthetic_label",
+      "seed": 2133,
+      "epochs": 60,
+      "batch_size": 128,
+      "training_images": 45000,
+      "training_index_sha256": "bfeb1036de41230ce0bd14d40d7b5f54e7396c2b45bfe80f30e6acb0454611a0",
+      "normalization": {
+        "mean": [
+          0.4915273318616848,
+          0.48229829196826324,
+          0.4466710224257884
+        ],
+        "std": [
+          0.24700601283311302,
+          0.24345457464553688,
+          0.2615733103293268
+        ]
+      },
+      "architecture": "provided ResNet18; unchanged",
+      "optimizer": "SGD lr=0.1 momentum=0.9 nesterov=True weight_decay=0.0005",
+      "schedule": "cosine, T_max=60, eta_min=0",
+      "augmentation": "reflect-pad 4, random crop 32, horizontal flip p=0.5",
+      "torch": "2.11.0+cu128",
+      "gpu": "NVIDIA GeForce RTX 3050 4GB Laptop GPU",
+      "precision": "CUDA FP16 autocast with GradScaler; FP32 weights; channels_last",
+      "cudnn_benchmark": true,
+      "bit_exact_reproducibility": false,
+      "best_acc": 53.25999855995178,
+      "best_epoch": 56,
+      "final_acc": 53.24000120162964,
+      "elapsed_seconds": 16965.159231185913
+    }
+  ],
+  "selected_human": {
+    "name": "robust_elr",
+    "method": "elr",
+    "training_label": "noisy_label",
+    "selection_label": "noisy_label",
+    "seed": 2133,
+    "epochs": 60,
+    "batch_size": 128,
+    "training_images": 45000,
+    "training_index_sha256": "bfeb1036de41230ce0bd14d40d7b5f54e7396c2b45bfe80f30e6acb0454611a0",
+    "normalization": {
+      "mean": [
+        0.4915273318616848,
+        0.48229829196826324,
+        0.4466710224257884
+      ],
+      "std": [
+        0.24700601283311302,
+        0.24345457464553688,
+        0.2615733103293268
+      ]
+    },
+    "architecture": "provided ResNet18; unchanged",
+    "optimizer": "SGD lr=0.1 momentum=0.9 nesterov=True weight_decay=0.0005",
+    "schedule": "cosine, T_max=60, eta_min=0",
+    "augmentation": "reflect-pad 4, random crop 32, horizontal flip p=0.5",
+    "torch": "2.11.0+cu128",
+    "gpu": "NVIDIA GeForce RTX 3050 4GB Laptop GPU",
+    "precision": "CUDA FP16 autocast with GradScaler; FP32 weights; channels_last",
+    "cudnn_benchmark": true,
+    "bit_exact_reproducibility": false,
+    "best_acc": 58.059996366500854,
+    "best_epoch": 46,
+    "final_acc": 57.77999758720398,
+    "elapsed_seconds": 16928.706726312637,
+    "variant": "single_seed_2133",
+    "network_count": 1,
+    "member_runs": [
+      "robust_elr"
+    ],
+    "member_seeds": [
+      2133
+    ]
+  },
+  "selected_synthetic": {
+    "name": "synthetic_best",
+    "method": "elr",
+    "training_label": "synthetic_label",
+    "selection_label": "synthetic_label",
+    "seed": 2133,
+    "epochs": 60,
+    "batch_size": 128,
+    "training_images": 45000,
+    "training_index_sha256": "bfeb1036de41230ce0bd14d40d7b5f54e7396c2b45bfe80f30e6acb0454611a0",
+    "normalization": {
+      "mean": [
+        0.4915273318616848,
+        0.48229829196826324,
+        0.4466710224257884
+      ],
+      "std": [
+        0.24700601283311302,
+        0.24345457464553688,
+        0.2615733103293268
+      ]
+    },
+    "architecture": "provided ResNet18; unchanged",
+    "optimizer": "SGD lr=0.1 momentum=0.9 nesterov=True weight_decay=0.0005",
+    "schedule": "cosine, T_max=60, eta_min=0",
+    "augmentation": "reflect-pad 4, random crop 32, horizontal flip p=0.5",
+    "torch": "2.11.0+cu128",
+    "gpu": "NVIDIA GeForce RTX 3050 4GB Laptop GPU",
+    "precision": "CUDA FP16 autocast with GradScaler; FP32 weights; channels_last",
+    "cudnn_benchmark": true,
+    "bit_exact_reproducibility": false,
+    "best_acc": 53.25999855995178,
+    "best_epoch": 56,
+    "final_acc": 53.24000120162964,
+    "elapsed_seconds": 16965.159231185913,
+    "variant": "single_seed_2133",
+    "network_count": 1,
+    "member_runs": [
+      "synthetic_best"
+    ],
+    "member_seeds": [
+      2133
+    ]
+  }
+}
